@@ -8,11 +8,14 @@ class Dialog extends React.Component {
         this.state = {
             value: 'Alice'
         }
+        // TODO: some problem with focus
+        // focus goes to dialog because of the ref
+        // however, it cannot be moved to other radio buttons using arrows
         this.dialog = React.createRef();
     }
 
     componentDidUpdate() {
-        console.log('component updated');
+        console.log('component update');
         if (this.props.isVisible === true) {
             this.dialog.current.focus();
         }
